@@ -1,0 +1,12 @@
+{
+  "__comment": "This is a unit that introduces students to Rust. It covers basic concepts, but doesn't really get into syntax.",
+  "type": "unit",
+  "id": "intro_to_rust",
+  "name": "Rust Introduction",
+  "upload": ["00_rust_intro"],
+  "lessons": {
+    "les_rust_intro": {
+      "next": []
+    }
+  }
+}

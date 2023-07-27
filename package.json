@@ -1,0 +1,13 @@
+{
+    "name": "intro",
+    "version": "1.0.0",
+    "description": "The intro curriculum.",
+    "scripts": {
+        "lint": "eslint --fix . && prettier --write ."
+    },
+    "dependencies": {
+        "eslint": "^8.11.0",
+        "prettier": "^2.6.0"
+    },
+    "private": true
+}

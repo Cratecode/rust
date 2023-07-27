@@ -1,0 +1,22 @@
+{
+    "type": "unit",
+    "id": "rust_intro",
+    "name": "Introduction to Rust",
+    "upload": [
+        "sections/00_rust_concepts"
+    ],
+    "templates": "templates",
+    "lessons": {
+        "intro_to_rust": {
+            "next": []
+        }
+    },
+    "configTemplate": {
+        "commands": {
+            "0": {
+                "cmd": "cargo build --manifest-path=~/project/Cargo.toml",
+                "mode": "once"
+            }
+        }
+    }
+}
