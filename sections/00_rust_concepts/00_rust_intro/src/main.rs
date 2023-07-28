@@ -110,7 +110,7 @@ fn main() {
                 print!("{char}");
             }
 
-            println!("");
+            println!();
         }
     }
 }
