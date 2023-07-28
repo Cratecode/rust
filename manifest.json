@@ -12,9 +12,14 @@
         }
     },
     "configTemplate": {
+        "run": {
+            "command": {
+                "value": "cargo run --manifest-path=~/project/Cargo.toml"
+            }
+        },
         "commands": {
             "0": {
-                "cmd": "cargo build --manifest-path=~/project/Cargo.toml",
+                "cmd": "cargo install --manifest-path=~/project/Cargo.toml",
                 "mode": "once"
             }
         }

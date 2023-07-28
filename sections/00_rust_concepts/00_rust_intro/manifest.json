@@ -4,6 +4,6 @@
   "extends": "basic",
   "name": "Rust - A Language You'll Love",
   "unit" : "rust_intro",
-  "spec": null,
+  "spec": "A Mandelbrot Set renderer written in Rust which creates a plot on the console.",
   "class": "tutorial"
 }
