@@ -72,5 +72,5 @@ fn main() {
     // the rule wouldn't be broken.
     // It wouldn't have actually been destroyed, of course, but if we don't use it past a certain
     // point, then it may as well not exist past that point, for all intents and purposes.
-    println!("{}", arr_borrowed[1]);
+    println!("{}", arr_borrowed_mut[1]);
 }
