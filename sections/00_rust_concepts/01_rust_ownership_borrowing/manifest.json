@@ -1,6 +1,6 @@
 {
   "type": "lesson",
-  "id": "les_rust_intro",
+  "id": "les_rust_ownership_borrowing",
   "extends": "basic",
   "name": "Rust Ownership and Borrowing",
   "unit" : "rust_intro",
