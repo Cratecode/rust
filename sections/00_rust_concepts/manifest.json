@@ -3,9 +3,15 @@
   "type": "unit",
   "id": "intro_to_rust",
   "name": "Rust Introduction",
-  "upload": ["00_rust_intro"],
+  "upload": [
+    "00_rust_intro",
+    "01_rust_ownership_borrowing"
+  ],
   "lessons": {
     "les_rust_intro": {
+      "next": ["les_rust_ownership_borrowing"]
+    },
+    "les_rust_ownership_borrowing": {
       "next": []
     }
   }

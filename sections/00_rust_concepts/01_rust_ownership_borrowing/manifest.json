@@ -1,0 +1,9 @@
+{
+  "type": "lesson",
+  "id": "les_rust_intro",
+  "extends": "basic",
+  "name": "Rust Ownership and Borrowing",
+  "unit" : "rust_intro",
+  "spec": "An example of borrowing and ownership in Rust.",
+  "class": "tutorial"
+}
