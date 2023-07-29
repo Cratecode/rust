@@ -147,7 +147,7 @@ but that memory could contain anything at all when we print it.
 Because this leads to undefined behavior, Rust gives us an error:
 ```rust
 error[E0597]: `list` does not live long enough
-  --> main.rs:16:16
+  --> src/main.rs:16:16
    |
 16 |     list_ref = &list;
    |                ^^^^^ borrowed value does not live long enough

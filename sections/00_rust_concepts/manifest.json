@@ -5,13 +5,17 @@
   "name": "Rust Introduction",
   "upload": [
     "00_rust_intro",
-    "01_rust_ownership_borrowing"
+    "01_rust_ownership_borrowing",
+    "02_rust_lifetimes"
   ],
   "lessons": {
     "les_rust_intro": {
       "next": ["les_rust_ownership_borrowing"]
     },
     "les_rust_ownership_borrowing": {
+      "next": ["les_rust_lifetimes"]
+    },
+    "les_rust_lifetimes": {
       "next": []
     }
   }
