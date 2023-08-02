@@ -1,3 +1,9 @@
 {
+  "run": {
+    "hideButton": true
+  },
+  "view": {
+    "toolboxWidth": 100
+  },
   "textOnly": true
 }
