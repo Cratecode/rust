@@ -6,7 +6,8 @@
   "upload": [
     "00_rust_intro",
     "01_rust_ownership_borrowing",
-    "02_rust_lifetimes"
+    "02_rust_lifetimes",
+    "03_rust_syntax"
   ],
   "lessons": {
     "les_rust_intro": {
@@ -16,6 +17,9 @@
       "next": ["les_rust_lifetimes"]
     },
     "les_rust_lifetimes": {
+      "next": ["les_rust_syntax"]
+    },
+    "les_rust_syntax": {
       "next": []
     }
   }
