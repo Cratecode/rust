@@ -91,7 +91,7 @@ my_function_2(&data);
 
 // A function will decide whether it wants a reference to the data, or the data itself.
 // It will also decide whether it wants an immutable reference, or a mutable one.
-// You don't get to how a function takes in data. If it requires a mutable reference, you must
+// You don't get to choose how a function takes in data. If it requires a mutable reference, you must
 // give it a mutable reference. And if it requires the data itself, you must give it the data.
 //
 // One nice thing about this is that it's immediately obvious what's happening.
