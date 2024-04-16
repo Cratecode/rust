@@ -1,3 +1,4 @@
 {
-    "defaultFile": "src/main.rs"
+    "defaultFile": "src/main.rs",
+    "source": "https://github.com/Cratecode/rust/tree/master/sections/00_rust_concepts/02_rust_lifetimes"
 }
