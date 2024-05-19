@@ -2,11 +2,11 @@
 
 Rendering the Mandelbrot Set is one of my favorite projects because it's incredibly simple to create a simple renderer for it, but with enough effort you can improve it and create some astonishing results. Take a look!
 
-$$IMAGE MandelbrotFull.png An image of the Mandelbrot Set that is colorful, complex, and visually interesting$$
+$$IMAGE MandelbrotFull.webp An image of the Mandelbrot Set that is colorful, complex, and visually interesting$$
 
 By the end of this series of projects, we'll build something capable of creating images like the one above. But first, let's start small. In the first lesson, there was an example of a simple Mandelbrot Set renderer - if you haven't already, [check it out](https://cratecode.com/lesson/rust-a-language-youll-love/75m1jc9k0p/xa3l5ahj5w)! This is what we'll be building today:
 
-$$IMAGE MandelbrotBasic.png An image of the Mandelbrot Set rendered as text with asterisks and spaces$$
+$$IMAGE MandelbrotBasic.svg An image of the Mandelbrot Set rendered as text with asterisks and spaces$$
 
 ## What is the Mandelbrot Set?
 
