@@ -1,0 +1,14 @@
+{
+  "__comment": "This unit contains different projects to explore Rust, grouped by topic.",
+  "type": "unit",
+  "id": "rust_projects",
+  "name": "Rust Projects",
+  "upload": [
+    "010_mandelbrot_set_renderer"
+  ],
+  "lessons": {
+    "les_rust_mandelbrot_set_renderer": {
+      "next": []
+    }
+  }
+}

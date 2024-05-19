@@ -7,7 +7,8 @@
     "00_rust_intro",
     "01_rust_ownership_borrowing",
     "02_rust_lifetimes",
-    "03_rust_syntax"
+    "03_rust_syntax",
+    "04_structs_and_traits"
   ],
   "lessons": {
     "les_rust_intro": {
@@ -20,6 +21,9 @@
       "next": ["les_rust_syntax"]
     },
     "les_rust_syntax": {
+      "next": ["les_rust_structs_traits"]
+    },
+    "les_rust_structs_traits": {
       "next": []
     }
   }

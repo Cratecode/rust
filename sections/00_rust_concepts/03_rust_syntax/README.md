@@ -224,13 +224,10 @@ and using them gives us new ways we can express our code.
 
 ## Conclusion
 
-Now that you understand some of Rust's basic syntax, it's time to move onwards.
-You'll have access to a series of different projects, which will each walk you through different Rust concepts.
-These are real-world projects, and will only interact with parts of Rust that are actually relevant to them.
-So, pick the project that relates the most to what you want to use Rust for,
-or just go with one that sounds interesting.
-If you want to learn more, you can always come back and do another project
-(hint: click the text below to view a "map" of every lesson to quickly navigate between them).
+Now that you understand some of Rust's basic syntax,
+there's just one more concept to cover before you can get to building some projects.
+Next, we'll cover how to store data in rust using structs and traits
+(which you can think of as the Rust equivalent of object-oriented programming).
 Also, take a look at some of the example code in the previous lesson to get a bit more practice with Rust's syntax,
 with this information in mind.
 Happy coding!

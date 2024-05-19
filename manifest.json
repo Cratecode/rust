@@ -3,11 +3,15 @@
     "id": "rust_intro",
     "name": "Introduction to Rust",
     "upload": [
-        "sections/00_rust_concepts"
+        "sections/00_rust_concepts",
+        "sections/01_rust_projects"
     ],
     "templates": "templates",
     "lessons": {
         "intro_to_rust": {
+            "next": ["rust_projects"]
+        },
+        "rust_projects": {
             "next": []
         }
     },
