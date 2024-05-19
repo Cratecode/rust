@@ -29,12 +29,15 @@ $$z=a+bi$$
 Where `a` and `b` are real numbers (the kind that you're used to) and `i` is the number $$\sqrt{-1}$$. That's a little weird, but all you need to care about is how to program them in. When you want to do math on them (like adding and multiplying them), you can just think of `i` as a variable. So, to add two complex numbers together, you'll do:
 
 $$z=a+bi$$
+
 $$k=c+di$$
+
 $$z+k=a+bi+c+di=\left(a+c\right)+\left(b+d\right)i$$
 
 Multiplying is a bit similar, but you also need to use the fact that $$i^{2}=-1$$:
 
 $$z\cdot k=\left(a+bi\right)\cdot\left(c+di\right)=ac+\left(ad+bc\right)i+bdi^{2}$$
+
 $$z\cdot k=ac-bd+\left(ad+bc\right)i$$
 
 If you're up for implementing these operations, I'd highly recommend it! However, if you don't want to, that's understandable as well. In that case, I'd recommend using the [num-complex](https://docs.rs/num-complex/latest/num_complex/) crate (which you can install by running `cargo add num-complex`), which can handle all of this math for you.
