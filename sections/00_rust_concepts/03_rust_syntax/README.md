@@ -59,6 +59,24 @@ let mut my_mutable_variable = 10;
 my_mutable_variable = 100;
 ```
 
+Rust has support for something called variable shadowing. That means that we can re-declare variables, even if one with the same name already exists, and the new variable will hide (*case a shadow over*) the variable that already exists. Keep in mind that both variables still exist, and any references to them are still valid; we've just hidden the first one.
+
+```rust
+let my_variable = 2;
+let my_variable_ref = &my_variable;
+
+// This shadows my_variable by creating a **new**
+// variable with the same name.
+let my_variable = 5;
+
+// However, both variables still exist,
+// and have separate data.
+// We just can't access the original under its
+// name anymore.
+println!("{my_variable_ref}"); // 2
+println!("{my_variable}"); // 5
+```
+
 ## Functions
 
 We already took a look at the main function above, so you should have an idea of how they're defined.
@@ -77,6 +95,8 @@ there's a parameter called `arg_1` (which takes in a `u32`—an unsigned, 32-bit
 Then, if we want to specify what the function returns (if it returns anything, which it doesn't need to),
 the `->` is used.
 In this case, `-> bool` means it will return a boolean.
+
+Keep in mind that, if you don't specify a return type, the function will still have one - it will just default to the type `()`. This is called the **unit type**, and is essentially a type that doesn't have any data in it. Because it has no data, you don't have to return `()` at the end of your function, but you can if you want to. There are a few places that this becomes useful, but the biggest part that you should worry about right now is in error messages. Sometimes, Rust will say that it expected `()`, and all that means is "no data". Similarly, you might see `Ok(())` or `Result<(), Error>`, and it means exactly the same thing - no data (for this example, it means the code succeeded, but isn't meant to return any data).
 
 ## Control Flow
 

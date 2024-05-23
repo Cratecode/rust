@@ -1,0 +1,14 @@
+{
+  "__comment": "This unit contains lessons that will be done in between projects.",
+  "type": "unit",
+  "id": "rust_project_concepts",
+  "name": "Rust Project Concepts",
+  "upload": [
+    "01_rust_enums"
+  ],
+  "lessons": {
+    "les_rust_enums": {
+      "next": []
+    }
+  }
+}

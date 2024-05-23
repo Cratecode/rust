@@ -4,7 +4,8 @@
     "name": "Introduction to Rust",
     "upload": [
         "sections/00_rust_concepts",
-        "sections/01_rust_projects"
+        "sections/01_rust_projects",
+        "sections/02_rust_project_concepts"
     ],
     "templates": "templates",
     "images": "images",
@@ -13,6 +14,9 @@
             "next": ["rust_projects"]
         },
         "rust_projects": {
+            "next": []
+        },
+        "rust_project_concepts": {
             "next": []
         }
     },
