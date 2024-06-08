@@ -5,7 +5,8 @@
   "name": "Rust Projects",
   "upload": [
     "010_more_rust_concepts",
-    "020_mandelbrot_set_renderer"
+    "020_mandelbrot_set_renderer",
+    "021_color_mandelbrot"
   ],
   "lessons": {
     "les_more_rust_concepts": {
@@ -17,6 +18,10 @@
       "next": [
         "les_rust_enums"
       ]
+    },
+    "les_rust_color_mandelbrot": {
+      "previous": ["les_rust_mandelbrot_set_renderer", "les_rust_enums"],
+      "requireAll": true
     }
   }
 }
