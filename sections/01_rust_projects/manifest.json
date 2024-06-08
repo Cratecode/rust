@@ -20,8 +20,7 @@
       ]
     },
     "les_rust_color_mandelbrot": {
-      "previous": ["les_rust_mandelbrot_set_renderer", "les_rust_enums"],
-      "requireAll": true
+      "previous": ["les_rust_enums"]
     }
   }
 }
