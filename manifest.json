@@ -28,7 +28,7 @@
         },
         "commands": {
             "0": {
-                "cmd": "cargo install --manifest-path ~/project/Cargo.toml",
+                "cmd": "cargo build --manifest-path ~/project/Cargo.toml",
                 "mode": "once"
             }
         }
