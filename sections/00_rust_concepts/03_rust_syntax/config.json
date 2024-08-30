@@ -6,5 +6,6 @@
     "toolboxWidth": 100
   },
   "textOnly": true,
-  "source": "https://github.com/Cratecode/rust/tree/master/sections/00_rust_concepts/03_rust_syntax"
+  "source": "https://github.com/Cratecode/rust/tree/master/sections/00_rust_concepts/03_rust_syntax",
+  "showShareButton": true
 }

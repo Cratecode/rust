@@ -1,4 +1,5 @@
 {
   "defaultFile": "src/main.rs",
-  "source": "https://github.com/Cratecode/rust/tree/master/sections/01_rust_projects/020_mandelbrot_set_renderer"
+  "source": "https://github.com/Cratecode/rust/tree/master/sections/01_rust_projects/020_mandelbrot_set_renderer",
+  "showShareButton": true
 }

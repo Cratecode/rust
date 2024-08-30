@@ -1,4 +1,5 @@
 {
     "defaultFile": "src/main.rs",
-    "source": "https://github.com/Cratecode/rust/tree/master/sections/00_rust_concepts/01_rust_ownership_borrowing"
+    "source": "https://github.com/Cratecode/rust/tree/master/sections/00_rust_concepts/01_rust_ownership_borrowing",
+    "showShareButton": true
 }

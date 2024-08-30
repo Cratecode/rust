@@ -1,4 +1,5 @@
 {
   "defaultFile": "src/main.rs",
-  "source": "https://github.com/Cratecode/rust/tree/master/sections/01_rust_projects/021_color_mandelbrot"
+  "source": "https://github.com/Cratecode/rust/tree/master/sections/01_rust_projects/021_color_mandelbrot",
+  "showShareButton": true
 }
