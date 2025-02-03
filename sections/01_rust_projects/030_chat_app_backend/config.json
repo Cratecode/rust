@@ -1,0 +1,7 @@
+{
+    "defaultFile": "src/main.rs",
+    "source": "https://github.com/Cratecode/rust/tree/master/sections/01_rust_projects/030_chat_app_backend",
+    "showShareButton": true,
+    "outputView": "console",
+    "outputViews": ["console", "web"]
+}
