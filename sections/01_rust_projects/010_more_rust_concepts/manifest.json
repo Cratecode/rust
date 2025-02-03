@@ -1,7 +1,7 @@
 {
-  "type": "lesson",
-  "id": "les_more_rust_concepts",
-  "extends": "basic",
-  "name": "More Rust Concepts",
-  "unit" : "rust_intro"
+    "type": "lesson",
+    "id": "les_more_rust_concepts",
+    "extends": "basic",
+    "name": "More Rust Concepts",
+    "unit": "rust_intro"
 }

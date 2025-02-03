@@ -1,9 +1,9 @@
 {
-  "type": "lesson",
-  "id": "les_rust_structs_traits",
-  "extends": "basic",
-  "name": "Rust Structs and Traits",
-  "unit" : "rust_intro",
-  "spec": "An example of structs and traits in Rust.",
-  "class": "tutorial"
+    "type": "lesson",
+    "id": "les_rust_structs_traits",
+    "extends": "basic",
+    "name": "Rust Structs and Traits",
+    "unit": "rust_intro",
+    "spec": "An example of structs and traits in Rust.",
+    "class": "tutorial"
 }

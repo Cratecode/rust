@@ -1,7 +1,8 @@
 # Rust Ownership and Borrowing
 
-The way Rust treats variables is fundamentally different from how they're handled in many other languages.
-Take a look at this JavaScript code:
+The way Rust treats variables is fundamentally different from how they're
+handled in many other languages. Take a look at this JavaScript code:
+
 ```js
 const arr = [1, 2, 3];
 const arr2 = arr;
@@ -10,41 +11,46 @@ arr[0] = 1000;
 console.log(arr, arr2); // [1000, 2, 3] [1000, 2, 3]
 ```
 
-In many languages, variables act like names to assign to pieces of data.
-In this example, `arr` and `arr2` are both aliases that really mean the same list.
-This is not how variables work in Rust.
+In many languages, variables act like names to assign to pieces of data. In this
+example, `arr` and `arr2` are both aliases that really mean the same list. This
+is not how variables work in Rust.
 
 ## Ownership
 
-Rust variables have the concept of "ownership".
-This basically means that a variable owns a piece of data.
-Another way to think about is it that a piece of data actually lives inside the variable itself.
-This is a fundamental concept in Rust, so it's important to understand it.
-If we wanted to write the same piece of code in Rust, it wouldn't do the same thing. If we have something like this:
+Rust variables have the concept of "ownership". This basically means that a
+variable owns a piece of data. Another way to think about is it that a piece of
+data actually lives inside the variable itself. This is a fundamental concept in
+Rust, so it's important to understand it. If we wanted to write the same piece
+of code in Rust, it wouldn't do the same thing. If we have something like this:
+
 ```rust
 let arr = vec![1, 2, 3];
 let arr2 = arr;
 ```
 
-Then the data (a Vec, which is basically the same thing as an array in JavaScript and a list in other languages) is first being placed inside of `arr`, then being **moved** from `arr` to `arr2`.
-After it's moved, there isn't anything in `arr`, so we can't use it.
+Then the data (a Vec, which is basically the same thing as an array in
+JavaScript and a list in other languages) is first being placed inside of `arr`,
+then being **moved** from `arr` to `arr2`. After it's moved, there isn't
+anything in `arr`, so we can't use it.
 
-This is the core idea behind how variables work in Rust.
-Instead of thinking of variables as a way to name data, think of them as the place where the data is actually stored.
-If the variable no longer exists (i.e., goes out of scope), then neither does the data.
+This is the core idea behind how variables work in Rust. Instead of thinking of
+variables as a way to name data, think of them as the place where the data is
+actually stored. If the variable no longer exists (i.e., goes out of scope),
+then neither does the data.
 
 ## Borrowing
 
-Of course, there's still a way to emulate the JavaScript code above.
-We can create these sorts of "aliases" by using **references** to our variables.
-These are also called **borrows** (you can think of it as borrowing the data from a variable).
-It's important to consider that,
-just like how Rust variables represent where the data "lives", references point to variables, not the data inside them.
-If we try to move data while a reference to it exists,
-we'll get compiler errors because Rust doesn't let us have a reference to something that doesn't exist
-(check out the code for an example).
+Of course, there's still a way to emulate the JavaScript code above. We can
+create these sorts of "aliases" by using **references** to our variables. These
+are also called **borrows** (you can think of it as borrowing the data from a
+variable). It's important to consider that, just like how Rust variables
+represent where the data "lives", references point to variables, not the data
+inside them. If we try to move data while a reference to it exists, we'll get
+compiler errors because Rust doesn't let us have a reference to something that
+doesn't exist (check out the code for an example).
 
 Now, let's try writing that code in Rust:
+
 ```rust
 // We need to mark variables as mutable so that we can modify them.
 let mut arr = vec![1, 2, 3];
@@ -68,16 +74,17 @@ let arr2 = &arr;
 let mut arr3 = &arr;
 ```
 
-But that's about as far as we can go.
-One of Rust's rules with borrows is that we can't modify data if an immutable reference to it exists.
-Another big rule is that we can have one mutable reference or as many immutable references as we want, but never both.
-So, we're stuck.
-This is one of the things that creates the most frustration when working in Rust.
-There's always a way forward, but it either requires thinking of our problem differently,
-or using other tools that Rust provides us.
-In most cases, we'll have to take the first option, and this case is no exception.
+But that's about as far as we can go. One of Rust's rules with borrows is that
+we can't modify data if an immutable reference to it exists. Another big rule is
+that we can have one mutable reference or as many immutable references as we
+want, but never both. So, we're stuck. This is one of the things that creates
+the most frustration when working in Rust. There's always a way forward, but it
+either requires thinking of our problem differently, or using other tools that
+Rust provides us. In most cases, we'll have to take the first option, and this
+case is no exception.
 
 If we wanted to get the same result, we could simply use:
+
 ```rust
 let mut arr = vec![1, 2, 3];
 
@@ -87,10 +94,10 @@ arr[0] = 1000;
 println!("{arr:?} {arr:?}");
 ```
 
-References are extremely useful when dealing with functions.
-They let us pass our data to a function without actually giving the data to the function
-(so the function "borrows" it instead).
-For example:
+References are extremely useful when dealing with functions. They let us pass
+our data to a function without actually giving the data to the function (so the
+function "borrows" it instead). For example:
+
 ```rust
 // This will move `data` into `my_function_1`.
 my_function_1(data);
@@ -112,20 +119,23 @@ my_function_2(&data);
 
 ### Mutable References
 
-Mutable references are similar to normal references, but they let us modify the data that they're borrowing.
-There can only ever be one mutable reference, and it can't exist if there are immutable references.
+Mutable references are similar to normal references, but they let us modify the
+data that they're borrowing. There can only ever be one mutable reference, and
+it can't exist if there are immutable references.
 
-In general, this is fine.
-There aren't that many cases where you'd need to give away two mutable references simultaneously.
-Computers run programs sequentially (one step after another), so you can just create mutable references as needed.
-In fact, the place where this falls apart is with concurrent programming, where steps aren't executed one after another.
-There are more language features that can be used to circumvent that, but we'll talk about those later.
+In general, this is fine. There aren't that many cases where you'd need to give
+away two mutable references simultaneously. Computers run programs sequentially
+(one step after another), so you can just create mutable references as needed.
+In fact, the place where this falls apart is with concurrent programming, where
+steps aren't executed one after another. There are more language features that
+can be used to circumvent that, but we'll talk about those later.
 
 ## Lifetimes
 
-We'll go into more depth on lifetimes in the next lesson,
-but the big idea behind them is that data only lives for a certain amount of time on the computer.
-Take a look at this code, for example:
+We'll go into more depth on lifetimes in the next lesson, but the big idea
+behind them is that data only lives for a certain amount of time on the
+computer. Take a look at this code, for example:
+
 ```rust
 // This creates an uninitialized variable.
 // Rust only allows this to exist if it's guaranteed that
@@ -140,22 +150,24 @@ let list_ref;
 // can't be accessed anymore, and so are removed from memory.
 {
     let list = vec![1, 2, 3];
-    
+
     list_ref = &list;
 }
 
 println!("{list_ref:?}");
 ```
 
-This code will not work.
-The issue is that we're setting `list_ref` to a reference of `list`, but `list` only exists within that block.
-As soon as it isn't accessible anymore, it'll get removed from memory,
-so the `println` wouldn't have anything to access.
+This code will not work. The issue is that we're setting `list_ref` to a
+reference of `list`, but `list` only exists within that block. As soon as it
+isn't accessible anymore, it'll get removed from memory, so the `println`
+wouldn't have anything to access.
 
 In some languages, doing something like this might lead to undefined behavior.
-Our reference would still point to a place in memory (specifically, the point that the Vec used to take up),
-but that memory could contain anything at all when we print it.
-Because this leads to undefined behavior, Rust gives us an error:
+Our reference would still point to a place in memory (specifically, the point
+that the Vec used to take up), but that memory could contain anything at all
+when we print it. Because this leads to undefined behavior, Rust gives us an
+error:
+
 ```rust
 error[E0597]: `list` does not live long enough
   --> src/main.rs:16:16
@@ -169,11 +181,10 @@ error[E0597]: `list` does not live long enough
    |            -------- borrow later used here
 ```
 
-This is the basic idea behind lifetimes.
-Data only lives for a certain amount of time,
-and if references outlive the things they point to, issues start to creep up.
-To fix this, we would need to make `list` live longer.
-An easy way to do that is to move it into a variable that lives longer:
+This is the basic idea behind lifetimes. Data only lives for a certain amount of
+time, and if references outlive the things they point to, issues start to creep
+up. To fix this, we would need to make `list` live longer. An easy way to do
+that is to move it into a variable that lives longer:
 
 ```rust
 let new_list;
@@ -181,7 +192,7 @@ let list_ref;
 
 {
     let list = vec![1, 2, 3];
-    
+
     // It needs to be done in this order because
     // of our rules with moving while we have a reference.
     new_list = list;
@@ -191,6 +202,5 @@ let list_ref;
 println!("{list_ref:?}");
 ```
 
-Alternatively, we could just remove the scope.
-There are also nicer ways to do things like this, which we'll look into soon.
-Happy coding!
+Alternatively, we could just remove the scope. There are also nicer ways to do
+things like this, which we'll look into soon. Happy coding!

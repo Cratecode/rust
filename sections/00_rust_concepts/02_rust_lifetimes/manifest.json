@@ -1,9 +1,9 @@
 {
-  "type": "lesson",
-  "id": "les_rust_lifetimes",
-  "extends": "basic",
-  "name": "Rust Lifetimes",
-  "unit" : "rust_intro",
-  "spec": "An example of lifetimes in Rust.",
-  "class": "tutorial"
+    "type": "lesson",
+    "id": "les_rust_lifetimes",
+    "extends": "basic",
+    "name": "Rust Lifetimes",
+    "unit": "rust_intro",
+    "spec": "An example of lifetimes in Rust.",
+    "class": "tutorial"
 }

@@ -1,9 +1,9 @@
 {
-  "type": "lesson",
-  "id": "les_rust_intro",
-  "extends": "basic",
-  "name": "Rust - A Language You'll Love",
-  "unit" : "rust_intro",
-  "spec": "A Mandelbrot Set renderer written in Rust which creates a plot on the console.",
-  "class": "tutorial"
+    "type": "lesson",
+    "id": "les_rust_intro",
+    "extends": "basic",
+    "name": "Rust - A Language You'll Love",
+    "unit": "rust_intro",
+    "spec": "A Mandelbrot Set renderer written in Rust which creates a plot on the console.",
+    "class": "tutorial"
 }

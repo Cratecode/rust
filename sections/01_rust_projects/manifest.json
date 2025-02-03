@@ -1,26 +1,22 @@
 {
-  "__comment": "This unit contains different projects to explore Rust, grouped by topic.",
-  "type": "unit",
-  "id": "rust_projects",
-  "name": "Rust Projects",
-  "upload": [
-    "010_more_rust_concepts",
-    "020_mandelbrot_set_renderer",
-    "021_color_mandelbrot"
-  ],
-  "lessons": {
-    "les_more_rust_concepts": {
-      "next": [
-        "rust_project_concepts"
-      ]
-    },
-    "les_rust_mandelbrot_set_renderer": {
-      "next": [
-        "les_rust_enums"
-      ]
-    },
-    "les_rust_color_mandelbrot": {
-      "previous": ["les_rust_enums"]
+    "__comment": "This unit contains different projects to explore Rust, grouped by topic.",
+    "type": "unit",
+    "id": "rust_projects",
+    "name": "Rust Projects",
+    "upload": [
+        "010_more_rust_concepts",
+        "020_mandelbrot_set_renderer",
+        "021_color_mandelbrot"
+    ],
+    "lessons": {
+        "les_more_rust_concepts": {
+            "next": ["rust_project_concepts"]
+        },
+        "les_rust_mandelbrot_set_renderer": {
+            "next": ["les_rust_enums"]
+        },
+        "les_rust_color_mandelbrot": {
+            "previous": ["les_rust_enums"]
+        }
     }
-  }
 }

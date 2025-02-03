@@ -1,30 +1,30 @@
 {
-  "__comment": "This is a unit that introduces students to Rust. It covers basic concepts, but doesn't really get into syntax.",
-  "type": "unit",
-  "id": "intro_to_rust",
-  "name": "Rust Introduction",
-  "upload": [
-    "00_rust_intro",
-    "01_rust_ownership_borrowing",
-    "02_rust_lifetimes",
-    "03_rust_syntax",
-    "04_structs_and_traits"
-  ],
-  "lessons": {
-    "les_rust_intro": {
-      "next": ["les_rust_ownership_borrowing"]
-    },
-    "les_rust_ownership_borrowing": {
-      "next": ["les_rust_lifetimes"]
-    },
-    "les_rust_lifetimes": {
-      "next": ["les_rust_syntax"]
-    },
-    "les_rust_syntax": {
-      "next": ["les_rust_structs_traits"]
-    },
-    "les_rust_structs_traits": {
-      "next": []
+    "__comment": "This is a unit that introduces students to Rust. It covers basic concepts, but doesn't really get into syntax.",
+    "type": "unit",
+    "id": "intro_to_rust",
+    "name": "Rust Introduction",
+    "upload": [
+        "00_rust_intro",
+        "01_rust_ownership_borrowing",
+        "02_rust_lifetimes",
+        "03_rust_syntax",
+        "04_structs_and_traits"
+    ],
+    "lessons": {
+        "les_rust_intro": {
+            "next": ["les_rust_ownership_borrowing"]
+        },
+        "les_rust_ownership_borrowing": {
+            "next": ["les_rust_lifetimes"]
+        },
+        "les_rust_lifetimes": {
+            "next": ["les_rust_syntax"]
+        },
+        "les_rust_syntax": {
+            "next": ["les_rust_structs_traits"]
+        },
+        "les_rust_structs_traits": {
+            "next": []
+        }
     }
-  }
 }
