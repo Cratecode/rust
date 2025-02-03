@@ -93,16 +93,17 @@ libraries like it out there, so feel free to use whichever one you want. This
 section will cover how to set up and use axum, and you can find more information
 about it (or other frameworks) by looking at their documentation.
 
-First, to install axum, run `cargo add axum` in your console. This will add it
-to your `Cargo.toml` and let you use it in your code. You also need to install
-tokio, which is an async runtime for Rust. We won't go too far into async/await
-in this lesson, but we will briefly touch on it and it is required for axum to
-function. You can install tokio with this command:
-`cargo add tokio --features full` (the `full` here gives you access to the full
-functionality of tokio). Finally, we'll need some features from the tower_http
-library — in particular, it can help us serve files in the `public` directory.
-Install it with `cargo add tower_http --features fs` (the `fs` here enables
-filesystem-related features that we need).
+First, to install axum, run `cargo add axum --features ws` in your console (the
+`ws` is to enable axum's WebSocket support). This will add it to your
+`Cargo.toml` and let you use it in your code. You also need to install tokio,
+which is an async runtime for Rust. We won't go too far into async/await in this
+lesson, but we will briefly touch on it and it is required for axum to function.
+You can install tokio with this command: `cargo add tokio --features full` (the
+`full` here gives you access to the full functionality of tokio). Finally, we'll
+need some features from the tower_http library — in particular, it can help us
+serve files in the `public` directory. Install it with
+`cargo add tower_http --features fs` (the `fs` here enables filesystem-related
+features that we need).
 
 With all these dependencies, now's a good time to mention that you can run
 `cargo check` in the console to check for errors, instead of using `cargo run`
@@ -157,22 +158,18 @@ your router so that it looks like this:
 
 ```rust
 let app = Router::new()
-          .nest_service("/", ServeDir::new("public"));
+          .fallback_service(ServeDir::new("public"));
 ```
 
 You'll need to import some more things. Run `cargo check` to figure out how to
-do this. This line tells axum to use the service returned by
-`ServeDir::new("public")` to handle the `/` route. In other words, tower_http
-provides a `ServeDir` service that contains all the code needed to read from a
-directory, and will try to serve any files in it. If it can't find one that
-matches, then axum will try to match on other routes (right now, there aren't
-any).
-
-What this means is that, when we try to connect to `/socket`, the web server
-will first look for a file matching `socket` in the `public` directory, see that
-there is none, and then move forward to our WebSocket handler. What this means
-is that, if you added a `socket` file to `public` directory, it would break the
-application.
+do this. Once you import everything, you'll probably get an error about type
+annotations. Don't worry! We'll fix that soon. This line above tells axum to use
+the service returned by `ServeDir::new("public")` to handle anything that hasn't
+already been handled. In other words, tower_http provides a `ServeDir` service
+that contains all the code needed to read from a directory, and will try to
+serve any files in it. First, axum will try the other routes (right now there
+aren't any), and if it can't find any matches, it'll look in the `public`
+directory.
 
 Now, let's add the finishing touches to make everything work. Add the following
 lines after your router:
@@ -181,6 +178,8 @@ lines after your router:
 let listener = TcpListener::bind("0.0.0.0:3000").await.unwrap();
 axum::serve(listener, app).await.unwrap();
 ```
+
+Make sure you import the `TcpListener` from tokio, not std!
 
 The first line creates a listener on port `3000`, which is the port where the
 content will be served on. This means that you can access it at
@@ -191,8 +190,8 @@ you're reading this on).
 Also, notice the `.await` on both of these lines. This means that the program
 will wait for the operation to finish until continuing. I won't delve into
 async/await right now, but just know that, whenever a function returns a
-`Future` type, you can `.await` it to retrieve the value (so long as you're
-inside an `async` function).
+`Future` type or is itself an `async` function, you can `.await` it to retrieve
+the value (so long as you're inside an `async` function).
 
 Now's a good time to test it out and make sure it works. Try running the
 program, then open the web view tab (it's right above the console) and see if it
@@ -242,6 +241,9 @@ struct ServerState {
     message_channel: broadcast::Sender<String>,
 }
 ```
+
+When importing, make sure you get `Arc` and `Mutex` from std, and `broadcast`
+from tokio!
 
 The `#[derive(Clone)]` at the top tells Rust to automatically make this struct
 cloneable (which means we can duplicate it). The reason is that axum actually
@@ -408,11 +410,16 @@ async fn handle_socket(
 Here's some important information to get you started:
 
 - To read/write data from/to `state.message_history`, do
-  `state.message_history.lock()`. For example, you can do
-  `state.message_history.lock().push("My message".to_string())`.
+  `state.message_history.lock().unwrap()`. For example, you can do
+  `state.message_history.lock().unwrap().push("My message".to_string())`.
 - Ensure that you aren't holding a lock across an await point or
   `tokio::select`. Doing so will cause issues that are hard to debug. Run
-  `cargo clippy` to detect this (as well as other types of issues).
+  `cargo clippy` to detect this (as well as other types of issues). You may have
+  to clone your messages Vec to avoid this.
+- If you're getting error messages about `Send` bounds, it most likely means
+  that you're holding a lock across an await point. To fix this, you can try
+  introducing a variable, or wrapping the code with the lock inside it with a
+  scope (`{}`).
 - You should have an infinite `loop` that your message receiving code goes
   through. Then, in each iteration of the loop, try to receive a message from
   the WebSocket or the broadcast channel. If the WebSocket returns `None`, then
