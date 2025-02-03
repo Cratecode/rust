@@ -85,9 +85,9 @@ fn good_function() -> i64 {
 }
 ```
 
-## Longer Lifetimes
+## Existing Lifetimes
 
-The most complicated way is through longer lifetimes.
+The most complicated way is by using existing lifetimes.
 Check out the example file for a more comprehensive example, but it basically comes down to this:
 ```rust
 fn probably_good_function(my_vec: &mut Vec<String>) -> &String {

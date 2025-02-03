@@ -19,7 +19,7 @@ This is not how variables work in Rust.
 Rust variables have the concept of "ownership".
 This basically means that a variable owns a piece of data.
 Another way to think about is it that a piece of data actually lives inside the variable itself.
-
+This is a fundamental concept in Rust, so it's important to understand it.
 If we wanted to write the same piece of code in Rust, it wouldn't do the same thing. If we have something like this:
 ```rust
 let arr = vec![1, 2, 3];
@@ -39,8 +39,8 @@ Of course, there's still a way to emulate the JavaScript code above.
 We can create these sorts of "aliases" by using **references** to our variables.
 These are also called **borrows** (you can think of it as borrowing the data from a variable).
 It's important to consider that,
-just like how Rust variables represent where the data "lives", references point to variables, not data.
-If we move things around,
+just like how Rust variables represent where the data "lives", references point to variables, not the data inside them.
+If we try to move data while a reference to it exists,
 we'll get compiler errors because Rust doesn't let us have a reference to something that doesn't exist
 (check out the code for an example).
 
@@ -55,6 +55,17 @@ let mut arr = vec![1, 2, 3];
 // If we used let mut here, it would let us set the variable to a
 // new value, but wouldn't give us access to modifying the list.
 let arr2 = &arr;
+
+// This also creates another immutable reference.
+// The difference here is that we can modify which
+// list arr3 points to.
+// Because the variable is marked as mut, we could write
+// arr3 = &other_list
+// to make it point to a different one.
+// Critically, we still can't modify the list itself, even
+// though we have mut here.
+// To do that, we'd need to use &mut arr
+let mut arr3 = &arr;
 ```
 
 But that's about as far as we can go.

@@ -109,7 +109,7 @@ if a == b {
 } else if b == c {
     // Or do this.
 } else {
-    // If nothing works, do this.
+    // If none of the conditions were true, do this.
 }
 ```
 
