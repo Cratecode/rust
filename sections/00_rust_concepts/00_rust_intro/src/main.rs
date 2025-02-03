@@ -28,7 +28,10 @@ impl ComplexNumber {
 
     /// Multiplies two complex numbers and returns the result.
     pub fn mul(self, other: ComplexNumber) -> ComplexNumber {
-        ComplexNumber(self.0 * other.0 - self.1 * other.1, self.0 * other.1 + self.1 * other.0)
+        ComplexNumber(
+            self.0 * other.0 - self.1 * other.1,
+            self.0 * other.1 + self.1 * other.0,
+        )
     }
 }
 
@@ -63,7 +66,10 @@ fn calculate_pixel(x: usize, y: usize) -> &'static str {
 
 /// Calculates the given pixels and adds them to the output list.
 /// index is a number (starting at 0) representing which thread
-fn calculate_pixels<const ROWS: usize>(index: usize, output: Arc<Mutex<[Option<[[&str; WIDTH]; ROWS]>; THREADS]>>) {
+fn calculate_pixels<const ROWS: usize>(
+    index: usize,
+    output: Arc<Mutex<[Option<[[&str; WIDTH]; ROWS]>; THREADS]>>,
+) {
     let mut output_chunk = [[" "; WIDTH]; ROWS];
     let row_offset = ROWS * index;
 
@@ -89,7 +95,9 @@ fn main() {
     for thread in 0..THREADS {
         let output = output.clone();
         // Each thread will be responsible for HEIGHT / THREADS rows.
-        threads.push(std::thread::spawn(move || calculate_pixels::<{HEIGHT / THREADS}>(thread, output)));
+        threads.push(std::thread::spawn(move || {
+            calculate_pixels::<{ HEIGHT / THREADS }>(thread, output)
+        }));
     }
 
     // Wait for it to be generated.

@@ -129,7 +129,11 @@ impl User {
 // so it can be displayed to the user.
 impl std::fmt::Display for User {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ID: {}\nName: {}\n============\n{}", self.id, self.name, self.bio)
+        write!(
+            f,
+            "ID: {}\nName: {}\n============\n{}",
+            self.id, self.name, self.bio
+        )
     }
 }
 
@@ -154,7 +158,11 @@ fn main() {
     // The differences between these two are subtle, but
     // &str is a reference to a string, and String is
     // an actual string.
-    let mut my_user = User::new(1, "Admin".into(), "Please contact webmaster@example.com if you notice any problems.".into());
+    let mut my_user = User::new(
+        1,
+        "Admin".into(),
+        "Please contact webmaster@example.com if you notice any problems.".into(),
+    );
 
     println!("User's ID: {}", my_user.id());
     // We could also write println!("{:?}", my_user).
