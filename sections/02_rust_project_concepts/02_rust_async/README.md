@@ -462,7 +462,6 @@ async works, and there are some great resources to help you dive further in.
 Check out the [Rust Async Book](https://rust-lang.github.io/async-book/) and the
 [Tokio Tutorial](https://tokio.rs/tokio/tutorial).
 
-You can also check out some projects to guide you through async. Try clicking
-the "Next" button at the bottom of the page, or click
-[here to check out the chat app backend project](https://cratecode.com/lesson/rust-chat-app-backend/k9lvm27fq1/xa3l5ahj5w).
+You can also check out some projects to guide you through async.
+[Click here to check out the chat app backend project](https://cratecode.com/lesson/rust-chat-app-backend/k9lvm27fq1/xa3l5ahj5w).
 Happy coding!

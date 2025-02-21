@@ -9,7 +9,7 @@
             "next": []
         },
         "les_rust_async": {
-            "next": ["les_rust_chat_app_backend"]
+            "next": []
         }
     }
 }
