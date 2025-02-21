@@ -1,23 +1,7 @@
 {
-    "root": "/user",
     "defaultFile": "src/main.rs",
     "source": "https://github.com/Cratecode/rust/tree/master/sections/01_rust_projects/030_chat_app_backend",
     "showShareButton": true,
     "outputView": "console",
-    "outputViews": ["console", "web"],
-    "run": {
-        "command": {
-            "value": "cargo run --manifest-path ~/project/user/Cargo.toml\n"
-        }
-    },
-    "commands": {
-        "0": {
-            "cmd": "cargo build --manifest-path ~/project/user/Cargo.toml",
-            "mode": "once"
-        },
-        "1": {
-            "cmd": "echo \"cd /home/user/project/user\" >> /home/user/.bashrc",
-            "mode": "once"
-        }
-    }
+    "outputViews": ["console", "web"]
 }
