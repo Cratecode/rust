@@ -3,10 +3,13 @@
     "type": "unit",
     "id": "rust_project_concepts",
     "name": "Rust Project Concepts",
-    "upload": ["01_rust_enums"],
+    "upload": ["01_rust_enums", "02_rust_async"],
     "lessons": {
         "les_rust_enums": {
             "next": []
+        },
+        "les_rust_async": {
+            "next": ["les_rust_chat_app_backend"]
         }
     }
 }

@@ -407,6 +407,8 @@ async fn handle_socket(
 }
 ```
 
+At this point, I would recommend you head over to the next lesson about async Rust, then come back here to finish the project. You can still give it a try right now, but there is some information contained in the next lesson that will be useful to you here.
+
 Here's some important information to get you started:
 
 - To read/write data from/to `state.message_history`, do
@@ -440,6 +442,8 @@ Here's some important information to get you started:
   in particular, the
   [WebSocket struct](https://docs.rs/axum/latest/axum/extract/ws/struct.WebSocket.html)
   that you have access to.
+
+This project involves a lot of concepts that are probably new to you, and you probably will get stuck somewhere along the way. That's okay! Try to get as far as you can, and consult resources when you get stuck. Once you've given it a good try, [click here to open the completed example code](../example/src/main.rs).
 
 Good luck! If you get stuck along the way, look online for other resources or
 examples. The axum repository has some great examples showcasing different

@@ -20,7 +20,8 @@
             "previous": ["les_rust_enums"]
         },
         "les_rust_chat_app_backend": {
-            "previous": ["les_rust_enums"]
+            "previous": ["les_rust_enums"],
+            "next": ["les_rust_async"]
         }
     }
 }
