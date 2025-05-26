@@ -151,7 +151,7 @@ NoData
 ## Struct Methods
 
 Even though structs don't have any methods in their definition, we can still add
-them another way. We'll ue the `impl` block:
+them another way. We'll use the `impl` block:
 
 ```rust
 impl User {
