@@ -25,12 +25,6 @@
             "command": {
                 "value": "cargo run --manifest-path ~/project/Cargo.toml\n"
             }
-        },
-        "commands": {
-            "0": {
-                "cmd": "cargo build --manifest-path ~/project/Cargo.toml",
-                "mode": "once"
-            }
         }
     }
 }
