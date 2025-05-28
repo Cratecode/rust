@@ -42,3 +42,5 @@ Here are some hints to help you along:
 * Replace a character in a string: ||string.replace_range(x..=x, "*")||
 * Random number between -1 and 1: ||rng.random_range(-1..=1)||
 * Adding with type casting: ||y = (y as i64 + val) as usize||
+
+Happy coding!
