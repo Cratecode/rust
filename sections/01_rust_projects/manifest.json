@@ -7,7 +7,8 @@
         "010_more_rust_concepts",
         "020_mandelbrot_set_renderer",
         "021_color_mandelbrot",
-        "030_chat_app_backend"
+        "030_chat_app_backend",
+        "040_smiley_face"
     ],
     "lessons": {
         "les_more_rust_concepts": {
@@ -22,6 +23,9 @@
         "les_rust_chat_app_backend": {
             "previous": ["les_rust_enums"],
             "next": ["les_rust_async"]
+        },
+        "les_rust_smiley_face": {
+            "next": ["rust_project_concepts"]
         }
     }
 }

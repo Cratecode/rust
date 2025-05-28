@@ -1,0 +1,9 @@
+{
+    "type": "lesson",
+    "id": "les_rust_smiley_face",
+    "extends": "basic",
+    "name": "Rust Smiley Face",
+    "unit": "rust_intro",
+    "spec": "A Rust program that prints out a random smiley face.",
+    "class": "project"
+}
